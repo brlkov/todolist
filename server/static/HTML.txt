@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> НАЗВАНИЕ </title>
+	</head>
+
+	<body>
+		<h1> ЗАГОЛОВОК </h2>
+
+
+		<p> АБЗАЦ </p>
+
+
+		<p> ПЕРВАЯ СТРОКА ТЕКСТА, <br>ВТОРАЯ </p>
+
+
+		<p>
+			<b> ЖИРНЫЙ </b>
+			<i> КУРСИВ </i>
+		</p>
+
+
+		<ul>
+			<li> СПИСОК ПУНКТ 1 </li>
+			<li> СПИСОК ПУНКТ 2 </li>
+		</ul>
+
+
+		<a href="http://fuck"> АБСОЛЮТНАЯ ССЫЛКА НА САЙТ </a>
+		<a href="../fuck.html"> ССЫЛКА НА ДОКУМЕНТ ПАПКОЙ ВЫШЕ</a>
+
+
+		<img src="smile.png">
+
+
+
+		<table border="1" cellpadding(РАССТОЯНИЕ МЕЖДУ ЯЧЕЙКАМИ)="10" cellspacing(РАССТОЯНИЕ ОТ ТЕКСТА ДО ЯЧЕЙКИ="10" width="300" height="300">
+			<tr>
+				<th>Имя</th>
+				<th>Фамилия</th>
+				<th>Зарплата</th>
+			</tr>
+			<tr>
+				<td>Иван</td>
+				<td>Иванов</td>
+				<td>200$</td>
+			</tr>
+			<tr>
+				<td>Николай</td>
+				<td>Сидоров</td>
+				<td>1000$</td>
+			</tr>
+		</table>
+
+		
+		
+	</body>
+</html>
+
+
+
+
+
+http://www.hdsw.ru/?p=21#menu1
+
+
+
+
+
+
+    return showRed ? (
+        <div style={{background: 'red'}}>It is red</div>
+    ) : (
+        <div className="App">
+            {/*REACT ROUTER:*/}
+            {/*<Switch>*/}
+            {/*    <Route path="/messages" component={Messages} />*/}
+            {/*    <Route path="/audios" component={MyMusic} />*/}
+            {/*</Switch>*/}
+            {/*<Link to="/audios">Go to my Music</Link>*/}
+            {/*</Switch>*/}
+            <button onClick={() => setShowRed(true)}>Toggle red</button>
+            <h1>Add new post</h1>
+            <MyInput
+                value={title}
+                onChange={event => setTitle(event.target.value)}
+                type="text"
+                placeholder="Name"
+            />
+            <MyInput
+                value={body}
+                onChange={event => setBody(event.target.value)}
+                type="text"
+                placeholder="Description"
+            />
+            <MyButton onClick={addNewPost}>Add post</MyButton>
+            <h1>Posts list</h1>
+            <PostList posts={posts}/>
+        </div>
+    );
+}

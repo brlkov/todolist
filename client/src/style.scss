@@ -1,0 +1,300 @@
+@mixin btn {
+    background: white;
+    opacity: 0.6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: URW Gothic L, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    padding: 10px;
+}
+
+@mixin inp {
+    min-height: 30px;
+    background-color: white;
+    opacity: 0.6;
+    border: none;
+    border-radius: 5px;
+    font-family: URW Gothic L, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+html {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(232,255,236,0.4);
+    font-family: URW Gothic L, sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.todos {
+    width: 100vw;
+    max-width: 800px;
+}
+
+
+
+.header {
+    margin: 20px;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        margin-bottom: 20px;
+        padding: 10px 0 30px 0;
+
+        p {
+            font-size: 30px;
+            font-weight: lighter;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            width: 35px;
+            height: 35px;
+            font-weight: bold;
+            background: none;
+            border: 2px solid black;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+.newTask {
+    position: inherit;
+    padding: 20px;
+    width: inherit;
+    display: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(213,235,213,0.6);
+
+    input {
+        @include inp;
+
+        &::placeholder {
+            color: black;
+            opacity: 1;
+        }
+    }
+
+    .nameDate {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        #name {
+            width: 60%;
+        }
+        #date {
+            width: 30%;
+        }
+    }
+
+    #description {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        margin: 20px 0;
+    }
+
+    .inputFiles {
+
+        input {
+            display: none;
+        }
+
+        label {
+            @include inp;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: black;
+            cursor: pointer;
+            padding: 10px;
+        }
+    }
+
+    .addButton{
+        margin-top: 20px;
+
+        button {
+            @include btn;
+        }
+    }
+}
+
+
+
+.todoItem {
+    opacity: 0.85;
+    position: inherit;
+    padding: 20px;
+    margin: 20px;
+    width: inherit;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(213,235,213,0.6);
+
+    .main {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        margin-bottom: 20px;
+    }
+
+    .files {
+        min-height: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            margin-bottom: 20px;
+            margin-right: 20px;
+            color: black;
+
+            &:checked {
+                color: black;
+            }
+        }
+    }
+
+
+    .tools {
+        display: flex;
+        justify-content: space-between;
+
+        .info {
+
+            p {
+                border: none;
+                border-radius: 5px;
+                font-size: 15px;
+                font-weight: lighter;
+                padding: 10px;
+            }
+            #done {
+                margin: 0;
+                background-color: #b4e6b2;
+            }
+            #overdue {
+                margin: 0;
+                background-color: #ebada8;
+            }
+            #notDone {
+                margin: 0;
+                background-color: #ebe4a3;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+
+            #do {
+                background: url("./images/do.png") no-repeat center center;
+                background-size: cover;
+                width: 35px;
+                height: 35px;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                margin-left: 20px;
+            }
+            #delete {
+                background: url("./images/delete.png") no-repeat center center;
+                background-size: cover;
+                width: 30px;
+                height: 30px;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                margin-left: 20px;
+            }
+            #refactor {
+                background: url("./images/refactor.png") no-repeat center center;
+                background-size: cover;
+                width: 35px;
+                height: 35px;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                margin-left: 20px;
+            }
+        }
+    }
+
+
+    .refactor {
+        position: inherit;
+        margin-top: 40px;
+        width: inherit;
+        display: none;
+
+        input {
+            @include inp;
+
+            &::placeholder {
+                color: black;
+                opacity: 1;
+            }
+        }
+
+        .nameDate {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            #name {
+                width: 60%;
+            }
+            #date {
+                width: 30%;
+            }
+        }
+
+        #description {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100px;
+            margin: 20px 0;
+        }
+
+        .refactorButtons {
+
+            button {
+                @include btn;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+
+
+.open {
+    display: block !important;
+}
