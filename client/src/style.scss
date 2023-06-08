@@ -8,6 +8,7 @@
     font-size: 15px;
     font-weight: lighter;
     padding: 10px;
+    color: black;
 }
 
 @mixin inp {
@@ -21,12 +22,12 @@
     font-weight: lighter;
     padding: 10px;
     box-sizing: border-box;
+    color: black;
 }
 
 
 
 html {
-    width: 100vw;
     display: flex;
     justify-content: center;
     background-color: rgba(232,255,236,0.4);
@@ -106,6 +107,7 @@ body {
         }
         #date {
             width: 30%;
+            color: black;
         }
     }
 
@@ -273,6 +275,7 @@ body {
             }
             #date {
                 width: 30%;
+                color: black;
             }
         }
 
